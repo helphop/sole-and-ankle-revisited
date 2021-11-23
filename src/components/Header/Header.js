@@ -40,6 +40,7 @@ const Header = () => {
   );
 };
 
+
 const MainHeader = styled.div`
   display: flex;
   align-items: baseline;

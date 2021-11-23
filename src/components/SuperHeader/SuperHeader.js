@@ -25,9 +25,11 @@ const SuperHeader = () => {
 
 
 const Wrapper = styled.div`
-   height: 4px;
    background-color: ${COLORS.gray[900]};
-   overflow: hidden;
+   height: 4px;
+    * {
+      display: none;
+    }
    @media ${ QUERIES.tabletAndUp } {
     display: flex;
     align-items: center;
@@ -37,6 +39,9 @@ const Wrapper = styled.div`
     height: 40px;
     padding-left: 32px;
     padding-right: 32px;
+    * {
+      display: initial;
+    }
    }
 `;
 
