@@ -73,9 +73,17 @@ const MainColumn = styled.div`
 `;
 
 const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    label {
+      display: none;
+    }
+    @media ${ QUERIES.tabletAndUp } {
+      label {
+        display: flex;
+      }
+    }
 `;
 
 const Title = styled.h2`
