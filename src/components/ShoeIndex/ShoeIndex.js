@@ -8,6 +8,7 @@ import Select from '../Select';
 import Spacer from '../Spacer';
 import ShoeSidebar from '../ShoeSidebar';
 import ShoeGrid from '../ShoeGrid';
+import { QUERIES} from '../../constants';
 
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
@@ -36,21 +37,35 @@ const ShoeIndex = ({ sortId, setSortId }) => {
           </Breadcrumbs.Crumb>
         </Breadcrumbs>
         <Spacer size={42} />
-        <ShoeSidebar />
+        <ShoeSidebar/>
       </LeftColumn>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: baseline;
-  gap: 32px;
+  position: relative;
+  aside {
+    display: none;
+  }
+  @media ${ QUERIES.laptopAndUp } {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    gap: 32px;
+    aside {
+      display: initial;
+    }
+  }
 `;
 
 const LeftColumn = styled.div`
-  flex-basis: 248px;
+  position: absolute;
+  top: -10px;
+  @media ${ QUERIES.laptopAndUp } {
+    flex-basis: 248px;
+    position: initial;
+  }
 `;
 
 const MainColumn = styled.div`
@@ -64,8 +79,13 @@ const Header = styled.header`
 `;
 
 const Title = styled.h2`
+   position: relative;
+   top: 10px;
   font-size: 1.5rem;
   font-weight: ${WEIGHTS.medium};
+  @media ${ QUERIES.laptopAndUp } {
+    top: 0;
+  }
 `;
 
 export default ShoeIndex;
