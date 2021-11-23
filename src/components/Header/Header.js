@@ -5,6 +5,10 @@ import { COLORS, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
+import UnstyledButton from '../UnstyledButton';
+import Icon from '../Icon';
+
+import { QUERIES} from '../../constants';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -30,6 +34,17 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <Buttons className="buttons">
+          <UnstyledButton className="menu">
+            <Icon id="shopping-bag" strokeWidth={2}  />
+          </UnstyledButton>
+          <UnstyledButton className="menu">
+            <Icon id="search" strokeWidth={2}  />
+          </UnstyledButton>
+          <UnstyledButton className="menu">
+            <Icon id="menu" strokeWidth={2}  />
+          </UnstyledButton>
+        </Buttons>
       </MainHeader>
 
       <MobileMenu
@@ -50,9 +65,12 @@ const MainHeader = styled.div`
 `;
 
 const Nav = styled.nav`
-  display: flex;
-  gap: 48px;
-  margin: 0px 48px;
+  display: none;
+  @media ${ QUERIES.tabletAndUp } {
+    display: flex;
+    gap: 48px;
+    margin: 0px 48px;
+  }
 `;
 
 const Side = styled.div`
@@ -71,4 +89,15 @@ const NavLink = styled.a`
   }
 `;
 
+const Buttons = styled.div`
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  justify-content: flex-end;
+  gap: clamp(
+    1.5rem,
+    5.8vw + 0.5rem,
+    3.2rem
+  );
+`
 export default Header;
