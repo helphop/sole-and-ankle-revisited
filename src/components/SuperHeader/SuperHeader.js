@@ -34,12 +34,8 @@ const Wrapper = styled.div`
   background-color: hsl(var(--color-gray-900));
 
   @media ${QUERS.tabletAndSmaller} {
-   height: 4px;
-    * {
-      display: none;
-    }
+    display: none;
   }
-
 `;
 
 const MarketingMessage = styled.span`

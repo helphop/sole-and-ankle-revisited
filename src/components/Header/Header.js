@@ -60,6 +60,12 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid hsl(var(--color-gray-300));
+  @media ${QUERS.tabletAndSmaller } {
+    border-top 4px solid hsl(var(--color-gray-900));
+  }
+  @media ${QUERS.phoneAndSmaller } {
+    padding-inline: 16px 19px;
+  }
 `;
 
 const Nav = styled.nav`
