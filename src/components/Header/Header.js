@@ -68,7 +68,11 @@ const Nav = styled.nav`
   display: none;
   @media ${ QUERIES.laptopAndUp } {
     display: flex;
-    gap: 48px;
+    gap: clamp(
+      1rem,
+      4.5vw - 1.5rem,
+      3rem
+    );
     margin: 0px 48px;
   }
 `;
