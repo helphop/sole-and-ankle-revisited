@@ -6,7 +6,7 @@ import Select from '../Select';
 import Spacer from '../Spacer';
 import ShoeSidebar from '../ShoeSidebar';
 import ShoeGrid from '../ShoeGrid';
-import { QUERIES} from '../../constants';
+import { QUERS} from '../../constants';
 
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
@@ -42,27 +42,28 @@ const ShoeIndex = ({ sortId, setSortId }) => {
 };
 
 const Wrapper = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  gap: 32px;
   aside {
-    display: none;
+    display: initial;
   }
-  @media ${ QUERIES.laptopAndUp } {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: baseline;
-    gap: 32px;
+  @media ${QUERS.tabletAndSmaller} {
+    position: relative;
     aside {
-      display: initial;
+      display: none;
     }
   }
 `;
 
 const LeftColumn = styled.div`
-  position: absolute;
-  top: -10px;
-  @media ${ QUERIES.laptopAndUp } {
-    flex-basis: 248px;
-    position: initial;
+  flex-basis: 248px;
+  position: static;
+  @media ${QUERS.tabletAndSmaller} {
+    position: absolute;
+    top: -10px;
+    left: 0;
   }
 `;
 
@@ -71,27 +72,28 @@ const MainColumn = styled.div`
 `;
 
 const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  label {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  }
+  @media ${QUERS.phoneAndSmaller} {
     label {
       display: none;
     }
-    @media ${ QUERIES.tabletAndUp } {
-      label {
-        display: flex;
-      }
-    }
+  }
+
 `;
 
 const Title = styled.h2`
+top: 0;
+ @media ${QUERS.tabletAndSmaller} {
    position: relative;
    top: 10px;
   font-size: 1.5rem;
   font-weight: var(--font-weight-medium);
-  @media ${ QUERIES.laptopAndUp } {
-    top: 0;
-  }
+ }
 `;
 
 export default ShoeIndex;

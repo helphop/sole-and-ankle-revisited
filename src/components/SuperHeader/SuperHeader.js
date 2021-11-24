@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
-import { QUERIES } from '../../constants';
+import { QUERS } from '../../constants';
 
 const SuperHeader = () => {
   return (
@@ -23,24 +23,23 @@ const SuperHeader = () => {
 
 
 const Wrapper = styled.div`
-   background-color: hsl(var(--color-gray-900));
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 0.875rem;
+  color: hsl(var(--color-gray-300));
+  height: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: hsl(var(--color-gray-900));
+
+  @media ${QUERS.tabletAndSmaller} {
    height: 4px;
     * {
       display: none;
     }
-   @media ${ QUERIES.tabletAndUp } {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    font-size: 0.875rem;
-    color: hsl(var(--color-gray-300));
-    height: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
-    * {
-      display: initial;
-    }
-   }
+  }
+
 `;
 
 const MarketingMessage = styled.span`
@@ -52,7 +51,6 @@ const HelpLink = styled.a`
   color: inherit;
   text-decoration: none;
   outline-offset: 2px;
-
   &:not(:focus-visible) {
     outline: none;
   }

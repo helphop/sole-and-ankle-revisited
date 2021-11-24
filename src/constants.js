@@ -29,3 +29,15 @@ export const QUERIES = {
   'laptopAndUp': `(min-width: ${BREAKPOINTS.laptopMin}rem)`,
   'desktopAndUp': `(min-width: ${BREAKPOINTS.desktopMin}rem)`,
 }
+
+export const BREAKPTS = {
+  phone: 600,
+  tablet: 950,
+  laptop: 1300
+}
+
+export const QUERS = {
+  phoneAndSmaller: `(max-width: ${BREAKPTS.phone/16}rem)`,
+  tabletAndSmaller: `(max-width: ${BREAKPTS.tablet/16}rem)`,
+  laptopAndSmaller: `(max-width: ${BREAKPTS.laptop/16}rem)`
+}
