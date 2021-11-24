@@ -35,13 +35,13 @@ const Header = () => {
         </Nav>
         <Side />
         <Buttons className="buttons">
-          <UnstyledButton className="menu">
+          <UnstyledButton>
             <Icon id="shopping-bag" strokeWidth={2}  />
           </UnstyledButton>
-          <UnstyledButton className="menu">
+          <UnstyledButton>
             <Icon id="search" strokeWidth={2}  />
           </UnstyledButton>
-          <UnstyledButton className="menu">
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
             <Icon id="menu" strokeWidth={2}  />
           </UnstyledButton>
         </Buttons>
@@ -66,7 +66,7 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: none;
-  @media ${ QUERIES.tabletAndUp } {
+  @media ${ QUERIES.laptopAndUp } {
     display: flex;
     gap: 48px;
     margin: 0px 48px;
@@ -83,7 +83,6 @@ const NavLink = styled.a`
   text-decoration: none;
   color: ${COLORS.gray[900]};
   font-weight: ${WEIGHTS.medium};
-
   &:first-of-type {
     color: ${COLORS.secondary};
   }
@@ -99,5 +98,9 @@ const Buttons = styled.div`
     5.8vw + 0.5rem,
     3.2rem
   );
+  @media ${ QUERIES.laptopAndUp } {
+    display: none;
+  }
+
 `
 export default Header;
