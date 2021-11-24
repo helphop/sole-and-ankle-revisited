@@ -76,6 +76,23 @@ html {
 html, body, #root {
   height: 100%;
 }
+
+
+/* COLORS */
+
+html {
+  --color-white: 0deg 0% 100%;
+
+  --color-gray-100: 185deg 5% 95%;
+  --color-gray-300: 190deg 5% 80%;
+  --color-gray-500: 196deg 4% 60%;
+  --color-gray-700: 220deg 5% 40%;
+  --color-gray-900: 220deg 3% 20%;
+
+  --color-primary: 340deg 65% 47%;
+  --color-secondary: 240deg 60% 63%;
+}
 `;
+
 
 export default GlobalStyles;

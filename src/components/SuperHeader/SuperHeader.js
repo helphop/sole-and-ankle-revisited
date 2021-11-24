@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS } from '../../constants';
-
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
-import { QUERIES} from '../../constants';
+import { QUERIES } from '../../constants';
 
 const SuperHeader = () => {
   return (
@@ -25,7 +23,7 @@ const SuperHeader = () => {
 
 
 const Wrapper = styled.div`
-   background-color: ${COLORS.gray[900]};
+   background-color: hsl(var(--color-gray-900));
    height: 4px;
     * {
       display: none;
@@ -35,7 +33,7 @@ const Wrapper = styled.div`
     align-items: center;
     gap: 24px;
     font-size: 0.875rem;
-    color: ${COLORS.gray[300]};
+    color: hsl(var(--color-gray-300));
     height: 40px;
     padding-left: 32px;
     padding-right: 32px;
@@ -46,7 +44,7 @@ const Wrapper = styled.div`
 `;
 
 const MarketingMessage = styled.span`
-  color: ${COLORS.white};
+  color: hsl(var(--color-white));
   margin-right: auto;
 `;
 

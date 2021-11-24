@@ -3,11 +3,6 @@ import React from 'react';
 import { X } from "react-feather";
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
-
-import { QUERIES, COLORS } from '../../constants';
-
-import UnstyledButton from '../UnstyledButton';
-import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
 
@@ -48,7 +43,7 @@ function MobileMenu ({
 };
 
 const Overlay = styled(DialogOverlay)`
-  background: hsla(220, 5%, 40%, 0.8);
+  background: hsla(var(--color-gray-700) / 0.8);
   position: fixed;
    inset: 0;
    z-index: 9999;
@@ -58,7 +53,7 @@ const Content = styled(DialogContent)`
   position: absolute;
   inset: 0;
   left: 75px;
-  background: ${COLORS.white};
+  background: hsl(var(--color-white));
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -81,7 +76,7 @@ const Content = styled(DialogContent)`
     font-weight: 600;
     padding-block: var(--padding-block);
     &.selected {
-      color: ${COLORS.secondary};
+      color: hsl(var(--color-secondary));
     }
   }
 
@@ -95,7 +90,7 @@ const Content = styled(DialogContent)`
 
     a {
       padding-block: var(--padding-block); // must increase the tap area
-      color: ${COLORS.gray[700]};
+      color: hsl(var(--color-gray-700));
     }
   }
 `;
