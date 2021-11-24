@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { WEIGHTS } from '../../constants';
-
 import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
 import Spacer from '../Spacer';
@@ -90,7 +88,7 @@ const Title = styled.h2`
    position: relative;
    top: 10px;
   font-size: 1.5rem;
-  font-weight: ${WEIGHTS.medium};
+  font-weight: var(--font-weight-medium);
   @media ${ QUERIES.laptopAndUp } {
     top: 0;
   }

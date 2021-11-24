@@ -73,7 +73,7 @@ const Content = styled(DialogContent)`
     text-transform: uppercase;
     color: currentColor;
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: var(--font-weight-medium);
     padding-block: var(--padding-block);
     &.selected {
       color: hsl(var(--color-secondary));

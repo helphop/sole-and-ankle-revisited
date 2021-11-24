@@ -91,6 +91,10 @@ html {
 
   --color-primary: 340deg 65% 47%;
   --color-secondary: 240deg 60% 63%;
+
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
 }
 `;
 
