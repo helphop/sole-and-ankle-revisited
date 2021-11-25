@@ -7,6 +7,7 @@ import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 
 import { QUERS } from '../../constants';
+import VisuallyHidden from '../VisuallyHidden';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -23,24 +24,27 @@ const Header = () => {
         <Side>
           <Logo />
         </Side>
-        <Nav>
+        <DesktopNav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
           <NavLink href="/men">Men</NavLink>
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
-        </Nav>
+        </DesktopNav>
         <Side />
-        <Buttons className="buttons">
+        <Buttons>
           <UnstyledButton>
             <Icon id="shopping-bag" strokeWidth={2}  />
+            <VisuallyHidden>Open Cart</VisuallyHidden>
           </UnstyledButton>
           <UnstyledButton>
             <Icon id="search" strokeWidth={2}  />
+            <VisuallyHidden>Search</VisuallyHidden>
           </UnstyledButton>
           <UnstyledButton onClick={() => setShowMobileMenu(true)}>
             <Icon id="menu" strokeWidth={2}  />
+            <VisuallyHidden>Open Menu</VisuallyHidden>
           </UnstyledButton>
         </Buttons>
       </MainHeader>
@@ -60,19 +64,18 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid hsl(var(--color-gray-300));
+  border-top 4px solid hsl(var(--color-gray-900));
+
   @media ${QUERS.tabletAndSmaller } {
-    border-top 4px solid hsl(var(--color-gray-900));
+    align-items: center;
   }
+
   @media ${QUERS.phoneAndSmaller } {
-    padding-inline: 16px 19px;
+    padding-inline: 16px;
   }
 `;
 
-const Nav = styled.nav`
-  @media ${QUERS.tabletAndSmaller } {
-     display: none;
-  }
-
+const DesktopNav = styled.nav`
   display: flex;
   gap: clamp(
     1rem,
@@ -80,6 +83,10 @@ const Nav = styled.nav`
     3rem
   );
   margin: 0px 48px;
+
+  @media ${QUERS.tabletAndSmaller } {
+     display: none;
+  }
 `;
 
 const Side = styled.div`
@@ -98,18 +105,20 @@ const NavLink = styled.a`
 `;
 
 const Buttons = styled.div`
+display: none;
  @media ${ QUERS.tabletAndSmaller } {
     display: flex;
-    width: 100%;
-    margin-left: auto;
-    justify-content: flex-end;
+    align-items: baseline;
     gap: clamp(
-      1.5rem,
-      5.8vw + 0.5rem,
+      1rem,
+      4vw,
       3.2rem
     );
+    > :first-child {
+      transform: translateX(-2px);
+    }
   }
-display: none;
+
 
 
 `

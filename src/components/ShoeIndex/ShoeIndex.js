@@ -6,7 +6,7 @@ import Select from '../Select';
 import Spacer from '../Spacer';
 import ShoeSidebar from '../ShoeSidebar';
 import ShoeGrid from '../ShoeGrid';
-import { QUERS} from '../../constants';
+import { QUERS } from '../../constants';
 
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
